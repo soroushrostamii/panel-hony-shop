@@ -12,13 +12,12 @@ export default function AdminLayout() {
 
   return (
     <Box sx={{ display: "flex", minHeight: "100vh", backgroundColor: "#f5f5f5", width: "100%", overflow: "hidden" }}>
-      <Sidebar width={drawerWidth} mobileOpen={mobileOpen} onDrawerToggle={handleDrawerToggle} />
       <Box 
         component="main" 
         sx={{ 
           flexGrow: 1, 
           width: { xs: "100%", md: `calc(100% - ${drawerWidth}px)` },
-          ml: { xs: 0, md: `${drawerWidth}px` },
+          ml: 0,
           display: "flex", 
           flexDirection: "column",
           minWidth: 0,
@@ -38,6 +37,7 @@ export default function AdminLayout() {
           <Outlet />
         </Box>
       </Box>
+      <Sidebar width={drawerWidth} mobileOpen={mobileOpen} onDrawerToggle={handleDrawerToggle} />
     </Box>
   );
 }
